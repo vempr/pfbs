@@ -1,19 +1,12 @@
 <?php
 
-require "functions.php";
-require "Database.php";
-$config = require("config.php");
+require_once "functions.php";
+require_once "Database.php";
+require_once "router.php";
 
 parseEnv(__DIR__ . "/.env");
+$config = require("config.php");
+$db = Database::getInstance($config["database"]);
 
-$db = new Database(
-  $config["database"],
-  getenv("DATABASE_USERNAME"),
-  getenv("DATABASE_PASSWORD")
-);
-
-$username = $_GET["username"] ?? "";
-$query = "SELECT * FROM users WHERE username = :username";
-
-$user = $db->query($query, [":username" => $username])->fetch();
-dd($user);
+$path = parse_url($_SERVER["REQUEST_URI"])["path"];
+routeToController($path, $routes, $db);
