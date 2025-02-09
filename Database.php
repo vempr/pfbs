@@ -15,12 +15,12 @@ class Database {
     if (self::$instance === null) {
       self::$instance = new self($config);
     }
-    return self::$instance->connection;
+    return self::$instance;
   }
 
   public function query($query, $params = []) {
     $statement = $this->connection->prepare($query);
-    $statement->execute($params); // pretend the params have been validated
+    $statement->execute($params);
     return $statement;
   }
 }
