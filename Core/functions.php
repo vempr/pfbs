@@ -12,7 +12,7 @@ function uriIs($value) {
   return $_SERVER["REQUEST_URI"] === $value;
 }
 
-function parseEnv($filePath) {
+function parse_env($filePath) {
   $env = file_get_contents($filePath);
   $lines = explode("\n", $env);
 
@@ -25,4 +25,8 @@ function parseEnv($filePath) {
     list($key, $value) = explode("=", $line, 2);
     putenv(trim($key) . "=" . trim($value));
   }
+}
+
+function base_path($path) {
+  return BASE_PATH . $path;
 }
