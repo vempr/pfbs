@@ -12,6 +12,6 @@
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/new-note">Create Note</a></li>
+      <li><a href="/new">Create Note</a></li>
     </ul>
   </nav>

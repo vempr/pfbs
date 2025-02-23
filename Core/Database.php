@@ -1,9 +1,5 @@
 <?php
 
-namespace Core;
-
-use PDO;
-
 class Database {
   private static $instance = null;
   public $connection;
