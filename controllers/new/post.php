@@ -1,5 +1,8 @@
 <?php
 
+use Core\Database;
+use Core\Validator;
+
 $config = require base_path("config.php");
 $db = Database::getInstance($config["database"]);
 

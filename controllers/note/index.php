@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 $config = require base_path("config.php");
 $db = Database::getInstance($config["database"]);
 $query = "SELECT * FROM notes WHERE id = :id";

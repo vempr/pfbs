@@ -8,10 +8,10 @@ parse_env(base_path(".env"));
 
 spl_autoload_register(function ($class) {
   $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-  require_once base_path("Core/" . $class . ".php");
+  require_once base_path($class . ".php");
 });
 
-$router = new Router();
+$router = new \Core\Router();
 require_once base_path("routes.php");
 
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
