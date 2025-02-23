@@ -6,6 +6,7 @@
   <form method="post">
     <input type="hidden" value="DELETE" name="_method" />
     <input type="hidden" value=<?= $note["id"] ?> name="id" />
+    <a href="/note/edit?id=<?= $note["id"] ?>">Edit</a>
     <button type="submit">Delete</button>
   </form>
 </main>
