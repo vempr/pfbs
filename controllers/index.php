@@ -1,7 +1,11 @@
 <?php
 
 $db = Database::getInstance($config["database"]);
-$query = "SELECT * FROM notes WHERE id = :id";
+$query = "SELECT * FROM notes WHERE author_id = 1";
 
-$note = $db->query($query, [":id" => (int)$_GET["id"]])->fetch();
-dd($note);
+$notes = $db->query($query)->fetchAll();
+
+view("index.view.php", [
+  "heading" => "My Notes",
+  "notes" => $notes
+]);
