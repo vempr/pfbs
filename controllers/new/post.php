@@ -10,7 +10,7 @@ if (!Validator::string($_POST["body"], 1, 1000)) {
 }
 
 if (!empty($errors)) {
-  view("note/new.view.php", [
+  view("new.view.php", [
     "heading" => "New Note",
     "errors" => $errors,
   ]);

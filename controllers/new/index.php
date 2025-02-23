@@ -1,6 +1,6 @@
 <?php
 
-view("note/new.view.php", [
+view("new.view.php", [
   "heading" => "New Note",
   "errors" => [],
 ]);
