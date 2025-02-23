@@ -27,4 +27,12 @@ class Database {
     $statement->execute($params);
     return $statement;
   }
+
+  public function fetchOrFail($connection) {
+    $result = $connection->fetch();
+    if (!$result) {
+      abort();
+    }
+    return $result;
+  }
 }
