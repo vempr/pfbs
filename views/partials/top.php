@@ -8,3 +8,10 @@
 </head>
 
 <body>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/new-note">Create Note</a></li>
+    </ul>
+  </nav>

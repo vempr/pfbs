@@ -7,7 +7,8 @@ $config = require(base_path("config.php"));
 parse_env(base_path(".env"));
 
 spl_autoload_register(function ($class) {
-  require_once base_path("Core/" . $class . ".php");
+  $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+  require_once base_path($class . ".php");
 });
 
 require_once base_path("Core/router.php");

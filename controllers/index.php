@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 $db = Database::getInstance($config["database"]);
 $query = "SELECT * FROM notes WHERE author_id = 1";
 
