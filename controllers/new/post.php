@@ -17,12 +17,12 @@ if (!empty($errors)) {
     "heading" => "New Note",
     "errors" => $errors,
   ]);
+} else {
+  $db->query("INSERT INTO notes(body, author_id) VALUES(:body, :author_id)", [
+    "body" => $_POST["body"],
+    "author_id" => 1
+  ]);
+
+  header("location: /");
+  die();
 }
-
-$db->query("INSERT INTO notes(body, author_id) VALUES(:body, :author_id)", [
-  "body" => $_POST["body"],
-  "author_id" => 1
-]);
-
-header("location: /");
-die();
